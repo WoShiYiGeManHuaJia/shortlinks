@@ -1,24 +1,12 @@
-{  
-  "redirects": {    
-    "abc123456": {      
-      "target": "aHR0cHM6Ly9leGFtcGxlLmNvbQ==", 
-      "created": "2026-04-18T12:00:00Z"
+{
+  "redirects": {
+    "hn": {
+      "target": "aHR0cHM6Ly93b3NoaXlpZ2VtYW5odWFqaWEuZ2l0aHViLmlvL2h1bmFuLXRhcmlmZi1zaXRlLw==",
+      "created": "2026-10-30T00:00:00Z"
     },
-    "def789012": {      
-      "target": "aHR0cHM6Ly9nb29nbGUuY29t",
-      "created": "2026-04-18T12:30:00Z"
-    },       
-    "shuyue": {      
-      "target": "aHR0cHM6Ly9jaGF0LnNodXl1ZS5sb3Zl",
-      "created": "2026-04-18T12:30:00Z"
-    },    
-    "video": {      
-      "target": "aHR0cHM6Ly93d3cuZG91eWluLmNvbS92aWRlby83NDc5Njk3NTUyNjExMjY1ODU1",
-      "created": "2026-04-18T12:30:00Z"
-    },   
-    "ghi345678": {      
-      "target": "aHR0cHM6Ly93d3cuamF2YXNjcmlwdC5jb20",
-      "created": "2026-04-18T13:00:00Z"
+    "demo": {
+      "target": "aHR0cHM6Ly9naXRodWIuY29tL2JpdC10b3JjaC9zaG9ydGxpbmtz",
+      "created": "2026-10-30T00:00:00Z"
     }
   }
 }
