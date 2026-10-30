@@ -1,3 +1,8 @@
+// 站点根路径（支持部署在 /xxx/ 子路径下，原版写死绝对路径会 404）
+var SL_BASE = (function () {
+    try { return location.pathname.replace(/\/u\/[^/]*$/, '/'); } catch (e) { return '/'; }
+})();
+
 // 重定向逻辑
 document.addEventListener('DOMContentLoaded', function() {
     // 从URL中提取短链接ID
@@ -48,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 显示错误消息并重定向到错误页面
     function showError(type, message) {
         // 重定向到错误页面，携带错误信息
-        const errorUrl = `/u/error.html?type=${type}&message=${encodeURIComponent(message)}`;
+        const errorUrl = `${SL_BASE}u/error.html?type=${type}&message=${encodeURIComponent(message)}`;
         window.location.href = errorUrl;
     }
 
@@ -63,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 如果没有短链接ID，重定向到404页面
         if (!shortLinkId) {
-            redirectTo('/u/404.html');
+            redirectTo(SL_BASE + 'u/404.html');
             return;
         }
         
@@ -74,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // 加载重定向配置
-        fetch('/data/redirects.json')
+        fetch(SL_BASE + 'data/redirects.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('无法加载重定向配置');
@@ -87,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (!redirectConfig) {
                     // 未找到配置，重定向到404页面
-                    redirectTo('/u/404.html');
+                    redirectTo(SL_BASE + 'u/404.html');
                     return;
                 }
 
